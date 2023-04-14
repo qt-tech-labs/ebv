@@ -4,16 +4,19 @@ import TextIcon from "../components/TextIcon";
 import TextField from "../components/TextField";
 import BriefNode from "../components/BriefNode";
 import { nodes } from "../constants/contents";
+import { TableView } from "../components/TableView";
+import FlexRow from "../components/FlexRow";
+import FlexCol from "../components/FlexCol";
 
 export default function Dashboard({ className }) {
   return (
-    <div className={`${className} bg-slate-100 flex flex-col `}>
+    <FlexCol className={`bg-slate-50`}>
       {/* Header */}
-      <div className="flex bg-white">
+      <FlexRow className={"bg-ww"}>
         <div className="flex-1">
           <TextField placeholder={`Search`} />
         </div>
-        <div className="flex items-center">
+        <FlexRow className={`items-center`}>
           {/* Avatar */}
           <img
             src="https://picsum.photos/200/300"
@@ -28,8 +31,8 @@ export default function Dashboard({ className }) {
               iconClasses: "w-3",
             }}
           />
-        </div>
-      </div>
+        </FlexRow>
+      </FlexRow>
       {/* Header */}
 
       {/* Overview */}
@@ -39,14 +42,17 @@ export default function Dashboard({ className }) {
       />
 
       {/* Brief */}
-      <div className="flex flex-row">
+      <FlexRow>
         {nodes.map((val) => (
           <BriefNode {...val} />
         ))}
-      </div>
+      </FlexRow>
       {/* Brief */}
 
-      {/* Overview */}
-    </div>
+      <TextView text={`Đang điều trị`} />
+
+      <TableView />
+      {/* End of overview */}
+    </FlexCol>
   );
 }
