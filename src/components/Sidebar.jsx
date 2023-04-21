@@ -1,17 +1,27 @@
 import logo from "../assets/logo.svg";
 import React from "react";
 import { tabs } from "../constants/contents";
+import { Link } from "react-router-dom";
 
-export function SidbarRow({ icon, text, isSelected }) {
+export function SidbarRow({ icon, text, path, isSelected }) {
+  const iconClasses = `${isSelected ? "text-new-primary" : "text-new-ww"} w-10`;
   return (
-    <div
-      className={`flex items-center ${
-        isSelected ? "bg-gre" : ""
-      } rounded-sm p-3 hover:bg-gre`}
+    <li
+      className={`${
+        isSelected ? "bg-new-ww" : "bg-new-primary hover:bg-[#914d6f]"
+      } rounded-lg px-3 py-2`}
     >
-      {React.createElement(icon, { className: "w-10 text-content-light" })}
-      <span className="text-content-light font-medium ml-5">{text}</span>
-    </div>
+      <Link to={path} className="flex items-center">
+        {React.createElement(icon, { className: iconClasses })}
+        <span
+          className={`${
+            isSelected ? "text-new-primary" : "text-new-ww"
+          }  hidden md:block`}
+        >
+          {text}
+        </span>
+      </Link>
+    </li>
   );
 }
 export default function SideBar({ className }) {
@@ -19,13 +29,13 @@ export default function SideBar({ className }) {
     <div className={`${className} flex justify-start flex-col items-center`}>
       <div className="flex items-center mt-5 mx-3">
         <img src={logo} className="w-10 text-mred" />
-        <span className="text-mred font-mono font-bold">EBV System</span>
+        <span className=" text-new-ww font-mono font-bold">HEALTH CARE</span>
       </div>
-      <div className="flex flex-col mt-10 flex-1">
+      <ul className="flex-1 mt-10">
         {tabs.map((val) => (
           <SidbarRow {...val} />
         ))}
-      </div>
+      </ul>
       <span className="text-content-light justify-self-end">
         v0.1.1 by nqt-tech
       </span>

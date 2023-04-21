@@ -8,4 +8,9 @@ export const xcolors = {
   },
   mred: "#dc2626",
   ww: "#fff",
+  new : {
+    primary: "#883660",
+    gray: "#E2E2E2",
+    ww: "#FCFCFC"
+  }
 };

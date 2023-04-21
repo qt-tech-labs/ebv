@@ -1,7 +1,6 @@
 import {
-  AiOutlineCalendar,
-  AiOutlineDashboard,
-  AiOutlineUser,
+  AiFillCalendar,
+  AiFillDashboard,
   AiOutlineUserDelete,
 } from "react-icons/ai";
 
@@ -12,18 +11,21 @@ import { xcolors } from "./colors";
 
 const tabs = [
   {
-    icon: AiOutlineDashboard,
+    icon: AiFillDashboard,
     text: "Dashboard",
+    path: "/",
     isSelected: false,
   },
   {
-    icon: AiOutlineCalendar,
+    icon: AiFillCalendar,
     text: "Appointments",
+    path: "/appointments",
     isSelected: true,
   },
   {
-    icon: AiOutlineUser,
+    icon: FaUserInjured,
     text: "Patients",
+    path: "/patients",
     isSelected: false,
   },
 ];
