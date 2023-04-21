@@ -1,6 +1,7 @@
 import { AiOutlineSetting } from "react-icons/ai";
 import TextView from "./TextView";
 import Icon from "./Icon";
+import React from "react";
 export default function BriefNode({ title, color, icon, data }) {
   return (
     <div className="flex flex-col flex-1 mx-3 bg-white rounded-lg p-4">
