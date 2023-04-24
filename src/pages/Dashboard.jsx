@@ -28,7 +28,10 @@ export default function Dashboard() {
     },
   ];
   const itemGenerator = (val) => (
-    <tr className=" transition ease-in-out duration-300 hover:bg-neutral-100">
+    <tr
+      onClick={() => {}}
+      className=" transition ease-in-out duration-300 hover:bg-neutral-100"
+    >
       <td>{val.sex}</td>
       <td>{val.name}</td>
       <td>{val.dob}</td>
