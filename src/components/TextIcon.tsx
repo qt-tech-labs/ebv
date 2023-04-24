@@ -1,6 +1,6 @@
-import TextView from "./TextView";
-import Icon from "./Icon";
-export default function TextIcon({ text, icon, props }) {
+import {TextView} from "./TextView";
+import {Icon} from "./Icon";
+export  function TextIcon({ text, icon, props }) {
   const xicon = <Icon icon={icon} className={props.iconClasses} />;
   return (
     <div className={`${props.className} flex items-center`}>

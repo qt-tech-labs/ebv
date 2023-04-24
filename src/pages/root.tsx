@@ -1,14 +1,9 @@
 import { Outlet } from "react-router-dom";
-import FlexRow from "../components/FlexRow";
-import SideBar from "../components/Sidebar";
-import FlexCol from "../components/FlexCol";
+import {FlexRow, SideBar, FlexCol, TextIcon, TextField} from "../components";
 import { AiOutlineDown } from "react-icons/ai";
-import TextIcon from "../components/TextIcon";
-import TextField from "../components/TextField";
-import React from "react";
-import Modal from "../components/modal/Modal";
 
 export default function Root() {
+  
   return (
     <FlexRow className={`bg-new-gray w-screen h-screen absolute`}>
       <SideBar className={`w-20 md:w-[200px] bg-new-primary shadow-xl`} />

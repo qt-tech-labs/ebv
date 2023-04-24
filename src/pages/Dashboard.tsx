@@ -1,12 +1,10 @@
-import BriefNode from "../components/BriefNode";
 import { nodes } from "../constants/contents";
-import { TableView } from "../components/TableView";
-import FlexRow from "../components/FlexRow";
-import { ProgressBar } from "../components/ProgressBar";
+import {FlexRow, TableView, BriefNode, ProgressBar, TextView} from "../components";
 import { AiFillDelete } from "react-icons/ai";
-import TextView from "../components/TextView";
 import strs from "../constants/strings";
+import { TableViewProps } from "../components/TableView";
 export default function Dashboard() {
+ 
   const headers = [
     "",
     "Tên",
@@ -16,23 +14,31 @@ export default function Dashboard() {
     "Ngày nhập viện",
     "",
   ];
-  const data = [
+  interface TableModel {
+    sex: string,
+      name: string,
+      dob: string,
+      add: string,
+      progress: number,
+      arrivalDate: string,
+      actions: [1, 2],
+  }
+  const data : TableModel[] = [
     {
       sex: "👨‍🦰",
       name: "Nguyen Van A",
       dob: "19/06/2003",
       add: "Hanoi",
-      progress: "",
+      progress: 1,
       arrivalDate: "30/04/2023",
       actions: [1, 2],
     },
   ];
-  const itemGenerator = (val) => (
+  const itemGenerator = (val:TableModel) => (
     <tr
-      onClick={() => {}}
       className=" transition ease-in-out duration-300 hover:bg-neutral-100"
     >
-      <td>{val.sex}</td>
+      <td>{val.sex}</td>      
       <td>{val.name}</td>
       <td>{val.dob}</td>
       <td>{val.add}</td>
@@ -47,6 +53,11 @@ export default function Dashboard() {
       </td>
     </tr>
   );
+  const tableContent : TableViewProps<TableModel> =  {
+    headers: headers,
+    data: data,
+    itemGenerator: itemGenerator
+  }
   return (
     <>
       {/* Overview */}
@@ -63,7 +74,7 @@ export default function Dashboard() {
           text={strs.dashboard.patientToday}
           className={`text-new-primary font-medium font-mono text-lg px-4 my-4`}
         />
-        <TableView className={``} {...{ data, headers, itemGenerator }} />
+        <TableView className={``} {...tableContent} />
       </div>
       {/* End of overview */}
     </>

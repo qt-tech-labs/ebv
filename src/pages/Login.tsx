@@ -1,16 +1,12 @@
-import FlexRow from "../components/FlexRow";
 import human from "../assets/human.png";
-import FlexCol from "../components/FlexCol";
-import TextView from "../components/TextView";
-import strs from "../constants/strings";
-import TextField from "../components/TextField";
-import Button from "../components/Button";
 import {
   AiFillApple,
   AiFillFacebook,
   AiFillGoogleSquare,
 } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
+import { FlexRow, FlexCol, TextView, TextField, Button } from "../components";
+import strs from "../constants/strings";
 
 export default function Login() {
   const iconClasses = "w-10 h-10 md:w-14 md:h-14";

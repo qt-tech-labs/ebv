@@ -2,8 +2,17 @@ import logo from "../assets/logo.png";
 import React from "react";
 import { tabs } from "../constants/contents";
 import { Link, useLocation } from "react-router-dom";
+import { BaseType } from "./common";
 
-export function SidbarRow({ icon, text, path }) {
+
+
+interface SidbarRowProps extends BaseType {
+  icon: any,
+  text: string,
+  path: string
+}
+
+function SidbarRow({ icon, text, path } : SidbarRowProps) {
   const location = useLocation();
   const selected = location.pathname == path;
   const iconClasses = `${selected ? "text-new-primary" : "text-new-ww"} w-10`;
@@ -27,7 +36,7 @@ export function SidbarRow({ icon, text, path }) {
     </li>
   );
 }
-export default function SideBar({ className }) {
+export function SideBar({ className }: BaseType) {
   return (
     <div className={`${className} flex justify-start flex-col items-center`}>
       <div className="flex items-center mt-5 mx-3">

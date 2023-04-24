@@ -1,15 +1,14 @@
 import { AiOutlineSetting } from "react-icons/ai";
-import TextView from "./TextView";
-import Icon from "./Icon";
+import { Icon, TextView } from ".";
 
 type BriefNodeProps = {
   title?: string,
   color?: string,
-  icon?: any,
-  data?: string
+  icon?: string,
+  data?: number
 }
 
-export default function BriefNode({ title, color, icon, data }: BriefNodeProps) {
+export function BriefNode({ title, color, icon, data }: BriefNodeProps) {
   return (
     <div className="flex flex-col flex-1 mx-3 bg-white rounded-lg p-4">
       <div className="flex">
@@ -26,7 +25,7 @@ export default function BriefNode({ title, color, icon, data }: BriefNodeProps) 
             className={`text-content-dark text-3xl font-bold`}
           />
         </div>
-        <Icon color={color} icon={icon} className={`text-5xl ml-auto`} />
+        <Icon color={color ?? "#fff"} icon={icon ?? AiOutlineSetting} className={`text-5xl ml-auto`} />
       </div>
     </div>
   );

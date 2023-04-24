@@ -1,4 +1,8 @@
-export function ProgressBar({ completed, background }) {
+type ProgressBarProps = {
+  completed: number,
+  background: string
+}
+export function ProgressBar({ completed, background }: ProgressBarProps) {
   const compete = `w-[${completed}%]`;
   return (
     <div className={`rounded-full border h-2 w-full`}>

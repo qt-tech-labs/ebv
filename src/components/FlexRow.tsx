@@ -1,10 +1,7 @@
-import React from "react";
-import { ReactElement } from "react";
-
-type FlexRow = {
+type FlexRowProps = {
   className?: string,
-  children?: ReactElement
+  children?: JSX.Element | JSX.Element[]
 }
-export default function FlexRow({ className, children }) {
+export function FlexRow({ className, children }: FlexRowProps) {
   return <div className={`flex ${className}`}>{children}</div>;
 }

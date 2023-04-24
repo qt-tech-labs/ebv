@@ -1,6 +1,5 @@
+import { FlexRow, Button } from "..";
 import strs from "../../constants/strings";
-import Button from "../Button";
-import FlexRow from "../FlexRow";
 
 export default function Modal() {
   return (

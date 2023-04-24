@@ -1,5 +1,10 @@
 import React from "react";
-export default function Icon({ icon, className, color }) {
+import { BaseType } from "./common";
+interface IconProps extends BaseType {
+  icon: string,
+  color: string
+}
+export function Icon({ icon, className, color }: IconProps) {
   return React.createElement(icon, {
     className: className,
     style: { color: color },

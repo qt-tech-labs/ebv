@@ -1,6 +1,5 @@
 import { useRouteError } from "react-router-dom";
-import FlexCol from "../components/FlexCol";
-import React from "react";
+import { FlexCol } from "../components";
 
 export default function ErrorPage() {
   const error = useRouteError();
@@ -9,7 +8,7 @@ export default function ErrorPage() {
       <h1>Oops!</h1>
       <p>Sorry, an unexpected error has occurred.</p>
       <p>
-        <i>{error.statusText || error.message}</i>
+        {/* <i>{error.statusText || error.message}</i> */}
       </p>
     </FlexCol>
   );
