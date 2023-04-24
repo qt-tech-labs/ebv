@@ -1,21 +1,24 @@
-import logo from "../assets/logo.svg";
+import logo from "../assets/logo.png";
 import React from "react";
 import { tabs } from "../constants/contents";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-export function SidbarRow({ icon, text, path, isSelected }) {
-  const iconClasses = `${isSelected ? "text-new-primary" : "text-new-ww"} w-10`;
+export function SidbarRow({ icon, text, path }) {
+  const location = useLocation();
+  const selected = location.pathname == path;
+  const iconClasses = `${selected ? "text-new-primary" : "text-new-ww"} w-10`;
+
   return (
     <li
       className={`${
-        isSelected ? "bg-new-ww" : "bg-new-primary hover:bg-[#914d6f]"
+        selected ? "bg-new-ww" : "bg-new-primary hover:bg-[#914d6f]"
       } rounded-lg px-3 py-2`}
     >
       <Link to={path} className="flex items-center">
         {React.createElement(icon, { className: iconClasses })}
         <span
           className={`${
-            isSelected ? "text-new-primary" : "text-new-ww"
+            selected ? "text-new-primary" : "text-new-ww"
           }  hidden md:block`}
         >
           {text}

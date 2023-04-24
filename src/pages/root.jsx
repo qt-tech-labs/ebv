@@ -5,17 +5,18 @@ import FlexCol from "../components/FlexCol";
 import { AiOutlineDown } from "react-icons/ai";
 import TextIcon from "../components/TextIcon";
 import TextField from "../components/TextField";
+import Modal from "../components/modal/Modal";
 
 export default function Root() {
   return (
-    <FlexRow className={`bg-new-gray`}>
-      <SideBar className={`flex-[20%] bg-new-primary shadow-xl`} />
-      <FlexCol>
+    <FlexRow className={`bg-new-gray w-screen h-screen absolute`}>
+      <SideBar className={`w-20 md:w-[200px] bg-new-primary shadow-xl`} />
+      <FlexCol className={`flex-1`}>
         {/* Header */}
         <FlexRow className={"bg-new-ww"}>
           <div className="flex-1 p-3">
             <TextField
-              className={`bg-new-primary w-80`}
+              className={`bg-new-primary w-80  text-new-ww placeholder-new-ww`}
               placeholder={`type here to search...`}
             />
           </div>
@@ -39,6 +40,7 @@ export default function Root() {
         {/* Header */}
         <Outlet />
       </FlexCol>
+      {/* <Modal /> */}
     </FlexRow>
   );
 }
