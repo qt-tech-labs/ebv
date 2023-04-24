@@ -1,8 +1,7 @@
-import React, { ReactNode } from "react";
 import FlexRow from "./FlexRow";
 type FlexColProps = {
   className?: string,
-  children?: ReactNode
+  children?: any
 }
 
 export default function FlexCol({ className, children } : FlexColProps) {

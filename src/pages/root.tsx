@@ -5,11 +5,8 @@ import FlexCol from "../components/FlexCol";
 import { AiOutlineDown } from "react-icons/ai";
 import TextIcon from "../components/TextIcon";
 import TextField from "../components/TextField";
-<<<<<<<< HEAD:src/pages/root.tsx
 import React from "react";
-========
 import Modal from "../components/modal/Modal";
->>>>>>>> main:src/pages/root.jsx
 
 export default function Root() {
   return (

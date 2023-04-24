@@ -1,4 +1,10 @@
-export default function TextField({ initial, placeholder, className, type }) {
+type TextFieldProps = {
+  initial?: string,
+  placeholder?: string,
+  className?: string,
+  type?: string
+}
+export default function TextField({ initial, placeholder, className, type } : TextFieldProps) {
   return (
     <input
       type={type ?? "text"}
