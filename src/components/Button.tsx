@@ -1,11 +1,11 @@
-type ButtonAction = () => void
-type ButtonProps = {
-  action?: ButtonAction,
-  className?: string,
-  children?: any
-}
-export function Button({ action, className, children }: ButtonProps) {
+import { ActionType, BaseType } from "./Common";
+export function Button({ action, className, children }: BaseType & ActionType) {
   return (
-    <span className={`${className} rounded cursor-pointer`}>{children}</span>
+    <span
+      onClick={() => action?.()}
+      className={`${className} rounded cursor-pointer`}
+    >
+      {children}
+    </span>
   );
 }

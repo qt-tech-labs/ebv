@@ -1,9 +1,18 @@
 import { Outlet } from "react-router-dom";
-import {FlexRow, SideBar, FlexCol, TextIcon, TextField} from "../components";
+import {
+  FlexRow,
+  SideBar,
+  FlexCol,
+  TextIcon,
+  TextField,
+  Modal,
+} from "../components";
 import { AiOutlineDown } from "react-icons/ai";
+import { useAppSelector } from "../app/hooks";
+import { modalIsHidden } from "../components/modal/modalSlice";
 
 export default function Root() {
-  
+  const isHidden = useAppSelector(modalIsHidden);
   return (
     <FlexRow className={`bg-new-gray w-screen h-screen absolute`}>
       <SideBar className={`w-20 md:w-[200px] bg-new-primary shadow-xl`} />
@@ -36,7 +45,7 @@ export default function Root() {
         {/* Header */}
         <Outlet />
       </FlexCol>
-      {/* <Modal /> */}
+      {!isHidden ? <Modal /> : <></>}
     </FlexRow>
   );
 }

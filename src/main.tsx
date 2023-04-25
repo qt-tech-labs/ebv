@@ -2,14 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Root from "./pages/root";
-import ErrorPage from "./pages/ErrorPage";
-import Dashboard from "./pages/Dashboard";
+import Root from "./layout/Root";
+import ErrorPage from "./layout/ErrorPage";
+import Dashboard from "./pages/dashboard/Dashboard";
 import Appointments from "./pages/Appointments";
 import Patients from "./pages/Patients";
 import Login from "./pages/Login";
 import { Provider } from "react-redux";
-import {store} from "./store";
+import { store } from "./app/store";
 
 const router = createBrowserRouter([
   {

@@ -1,12 +1,16 @@
 import React from "react";
-import { BaseType } from "./common";
-interface IconProps extends BaseType {
-  icon: string,
-  color: string
+import { ActionType, BaseType } from "./Common";
+interface IconProps extends BaseType, ActionType {
+  icon: string;
+  color: string;
 }
-export function Icon({ icon, className, color }: IconProps) {
-  return React.createElement(icon, {
-    className: className,
-    style: { color: color },
-  });
+export function Icon({ icon, className, color, action }: IconProps) {
+  return (
+    <span onClick={() => action()}>
+      {React.createElement(icon, {
+        className: className,
+        style: { color: color },
+      })}
+    </span>
+  );
 }

@@ -1,27 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "../../store";
-
+import { RootState } from "../../app/store";
 
 interface ModalSlice {
-    hidden: boolean
+  hidden: boolean;
 }
 
 const initialState: ModalSlice = {
-    hidden: true
-}
+  hidden: true,
+};
 
 export const modalSlice = createSlice({
-    name: "modal",
-    initialState,
-    reducers: {
-        toggle: (state) => {
-            state.hidden = !state.hidden
-        }
-    }
-})
+  name: "modal",
+  initialState,
+  reducers: {
+    toggleModal: (state) => {
+      state.hidden = !state.hidden;
+    },
+  },
+});
 
-export const {toggle} = modalSlice.actions
+export const { toggleModal } = modalSlice.actions;
 
-export const modalIsHidden = (state: RootState) => state.modal.hidden
+export const modalIsHidden = (state: RootState) => state.modal.hidden;
 
-export default modalSlice.reducer
+export default modalSlice.reducer;

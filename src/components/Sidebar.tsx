@@ -2,17 +2,15 @@ import logo from "../assets/logo.png";
 import React from "react";
 import { tabs } from "../constants/contents";
 import { Link, useLocation } from "react-router-dom";
-import { BaseType } from "./common";
-
-
+import { BaseType } from "./Common";
 
 interface SidbarRowProps extends BaseType {
-  icon: any,
-  text: string,
-  path: string
+  icon: any;
+  text: string;
+  path: string;
 }
 
-function SidbarRow({ icon, text, path } : SidbarRowProps) {
+function SidbarRow({ icon, text, path }: SidbarRowProps) {
   const location = useLocation();
   const selected = location.pathname == path;
   const iconClasses = `${selected ? "text-new-primary" : "text-new-ww"} w-10`;
